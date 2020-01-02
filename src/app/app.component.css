@@ -1,0 +1,7 @@
+.body-wrapper{
+    position: relative;
+    min-height:100vh;
+    padding-bottom:36px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}

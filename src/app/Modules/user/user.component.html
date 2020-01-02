@@ -1,0 +1,40 @@
+ <div class="page-wraper content">
+ <div class="container">
+<h6 class="text-center">User Details</h6>
+
+<div class="d-flex flex-row-reverse">
+  <!-- <div class="p-2 bg-info">Flex item 1</div> -->
+  <div class="p-2">
+    <pagination-controls (pageChange)="pagePagination = $event" previousLabel="" nextLabel=""></pagination-controls>
+  </div>
+  <div class="p-2">
+    <input type="text" class="form-control" [(ngModel)]="searchText">
+  </div>
+</div>
+
+<div class="table-scroll">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>User Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="UserList?.length > 0">
+      <tr
+        *ngFor="let item of UserList | filter : searchText | paginate: { itemsPerPage: 10, currentPage: pagePagination }">
+        <td>{{item.id}}</td>
+        <td>{{item.employee_name}}</td>
+        <td>{{item.employee_salary}}</td>
+        <td>{{item.employee_age}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="(UserList  | filter : searchText | paginate: { itemsPerPage: 10, currentPage: pagePagination })?.length == 0"
+    class="alert alert-info text-center">
+    <strong>Sorry!</strong> <a href="#" class="alert-link">'No data found....'</a>.
+  </div>
+</div>
+ </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="outer-wrap">
+<div class=" content">
+    <div class="container">
+   <h6 class="text-center">Employees Details</h6>
+    </div>
+</div>
+<div class="table-scroll">
+    <table class="table table-bordered ">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Employee Name</th>
+          <th>Employee Salary</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of EmployeeList">
+          <td>{{item.id}}</td>
+          <td>{{item.employee_name}}</td>
+          <td>{{item.employee_salary}}</td>
+          <td>{{item.employee_age}}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+</div>
